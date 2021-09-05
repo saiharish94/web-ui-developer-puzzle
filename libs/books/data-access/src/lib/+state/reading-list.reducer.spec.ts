@@ -38,8 +38,8 @@ describe('Books Reducer', () => {
       });
 
       const result: State = reducer(state, action);
-
-      expect(result.ids).toEqual(['A']);
+      // Already store has "A" and "B" book on before each we are adding. Here we failed to add book "B"
+      expect(result.ids).toEqual(['A', 'B']);
     });
 
     it('failedRemoveFromReadingList should undo book removal from the state', () => {
@@ -48,8 +48,8 @@ describe('Books Reducer', () => {
       });
 
       const result: State = reducer(state, action);
-
-      expect(result.ids).toEqual(['A', 'B', 'C']);
+      // Already store has "A" and "B" book. Here we failed to add book "C". So only two book should exist.
+      expect(result.ids).toEqual(['A', 'B']);
     });
   });
 
