@@ -4,11 +4,7 @@
       <div class="header--content">
         <h1>okreads</h1>
         <div>
-          <button
-            data-testing="toggle-reading-list"
-            mat-button
-            (click)="drawer.toggle()"
-          >
+          <button data-testing="toggle-reading-list" mat-button (click)="drawer.toggle()">
             Reading List
             <tmo-total-count></tmo-total-count>
           </button>
@@ -19,7 +15,7 @@
       <tmo-book-search></tmo-book-search>
     </main>
   </mat-drawer-content>
-  <mat-drawer #drawer mode="over" position="end">
+  <mat-drawer #drawer mode="over" position="end" role="navigation">
     <div class="reading-list-container" data-testing="reading-list-container">
       <h2>
         My Reading List
